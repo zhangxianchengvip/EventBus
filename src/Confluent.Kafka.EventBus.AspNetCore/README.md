@@ -1,7 +1,7 @@
-# IEventBus.AspNetCore
+# Confluent.Kafka.EventBus.AspNetCore
 
 #### 介绍
-基于AspNetCore Channel 实现进程内事件总线
+基于 Confluent.Kafka 实现进程内事件总线
 
 #### 快速开始
 
