@@ -8,22 +8,22 @@ using Microsoft.AspNetCore.Mvc;
 namespace EventBusSample.Controllers;
 [Route("api/[controller]")]
 [ApiController]
-public class AspNetCoreEventBusController : ControllerBase
+public class EventBusController : ControllerBase
 {
     private readonly IEventBus _eventBus;
 
-    public AspNetCoreEventBusController(IEventBus eventBus)
+    public EventBusController(IEventBus eventBus)
     {
         _eventBus = eventBus;
     }
     [HttpGet]
     public async Task Test()
     {
-        await _eventBus.PublishAsync("Test", new Test { Msg = "zxc" });
+        await _eventBus.PublishAsync("mc", new Test { Msg = "zxc" });
     }
 }
 
-[Subscribe("Test")]
+[Subscribe("mc")]
 public class TestHandler : IntegrationEventHandler<Test>
 {
     public override async Task HandleAsync(string topic, Test? value)
