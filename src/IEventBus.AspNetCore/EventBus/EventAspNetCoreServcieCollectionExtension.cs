@@ -7,7 +7,7 @@ namespace EventBus.AspNetCore
 {
     public static class EventAspNetCoreServcieCollectionExtension
     {
-        public static IServiceCollection AddEventBusAspNetCore(this IServiceCollection services)
+        public static IServiceCollection AddAspNetCoreEventBus(this IServiceCollection services)
         {
             services.AddEventBus();
             services.AddSingleton<IEventBus, AspNetCoreEventBus>();

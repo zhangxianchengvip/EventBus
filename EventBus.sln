@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IEventBus.AspNetCore", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confluent.Kafka.EventBus.AspNetCore", "src\Confluent.Kafka.EventBus.AspNetCore\Confluent.Kafka.EventBus.AspNetCore.csproj", "{699F73A4-D6AF-4864-A7D5-BF049C03260F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{E431FCD2-BDA2-4A19-9DC5-A787ECFF29ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBusSample", "sample\EventBusSample\EventBusSample.csproj", "{32DC94C2-8755-4D28-9683-982FDAA0836F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{699F73A4-D6AF-4864-A7D5-BF049C03260F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{699F73A4-D6AF-4864-A7D5-BF049C03260F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{699F73A4-D6AF-4864-A7D5-BF049C03260F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32DC94C2-8755-4D28-9683-982FDAA0836F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32DC94C2-8755-4D28-9683-982FDAA0836F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32DC94C2-8755-4D28-9683-982FDAA0836F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32DC94C2-8755-4D28-9683-982FDAA0836F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +45,7 @@ Global
 		{7941155D-2552-475F-BFF0-35309552A3FC} = {14BCDCCE-9E56-4BC2-AC6A-AE851A106502}
 		{5703A73D-3A6E-424E-8614-1E83D44DD2C2} = {14BCDCCE-9E56-4BC2-AC6A-AE851A106502}
 		{699F73A4-D6AF-4864-A7D5-BF049C03260F} = {14BCDCCE-9E56-4BC2-AC6A-AE851A106502}
+		{32DC94C2-8755-4D28-9683-982FDAA0836F} = {E431FCD2-BDA2-4A19-9DC5-A787ECFF29ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99B5B52F-4043-451D-8547-019739CCDA09}
