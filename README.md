@@ -119,6 +119,27 @@ public class TestHandler : IntegrationEventHandler<Test>//Or DynamicIntegrationE
 }
 ```
 
+6. 生产者通过IEventBus.PublishAsync 生产数据
+
+```c#
+[Route("api/[controller]")]
+[ApiController]
+public class EventBusController : ControllerBase
+{
+    private readonly IEventBus _eventBus;
+
+    public EventBusController(IEventBus eventBus)
+    {
+        _eventBus = eventBus;
+    }
+    [HttpGet]
+    public async Task Test()
+    {
+        await _eventBus.PublishAsync("mc", new Test { Msg = "zxc" });
+    }
+}
+```
+
 
 
 ---
@@ -181,5 +202,27 @@ public class TestHandler : IntegrationEventHandler<Test>//Or DynamicIntegrationE
         await Task.Yield();
     }
 }
+```
+
+6. 生产者通过IEventBus.PublishAsync 生产数据
+
+```C#
+[Route("api/[controller]")]
+[ApiController]
+public class EventBusController : ControllerBase
+{
+    private readonly IEventBus _eventBus;
+
+    public EventBusController(IEventBus eventBus)
+    {
+        _eventBus = eventBus;
+    }
+    [HttpGet]
+    public async Task Test()
+    {
+        await _eventBus.PublishAsync("mc", new Test { Msg = "zxc" });
+    }
+}
+
 ```
 
