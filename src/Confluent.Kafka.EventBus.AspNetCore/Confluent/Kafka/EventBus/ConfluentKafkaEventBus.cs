@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Confluent.Kafka;
 using EventBus.Abstractions;
 
-namespace Confluent.Kafka.EventBus.AspNetCore.Confluent.Kafka.EventBus
+namespace EventBus.Confluent.Kafka
 {
-    public class ConfluentKafkaEventBus : IEventBus
+    public class ConfluentKafkaEventBus : global::EventBus.Abstractions.IEventBus
     {
         private readonly IProducer<string, string> _producer;
         private readonly IConsumer<Ignore, byte[]> _consumer;

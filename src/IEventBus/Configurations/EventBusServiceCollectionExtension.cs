@@ -19,23 +19,10 @@ namespace EventBus
             bus.Subscribe(SubscriptionsManager.GetTopics().ToArray());
             return app;
         }
-
         public static IServiceCollection AddEventBus(this IServiceCollection services, Action<EventBusOptions> setupAction)
         {
-            //Options and extension service
-            var options = new EventBusOptions();
-            setupAction(options);
-            foreach (var serviceExtension in options.ServiceCollectionExtensions)
-            {
-                serviceExtension.AddServices(services);
-            }
-            services.AddSingleton(options);
 
-            return services;
-        }
 
-        public static IServiceCollection AddEventBus(this IServiceCollection services)
-        {
             var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where
             (
                 s =>
@@ -47,10 +34,21 @@ namespace EventBus
 
             AddEventBus(services, assemblies);
 
+            var options = new EventBusOptions();
+
+            setupAction(options);
+
+            foreach (var serviceExtension in options.ServiceCollectionExtensions)
+            {
+                serviceExtension.AddServices(services);
+            }
+
+            services.AddSingleton(options);
+
             return services;
         }
 
-        public static IServiceCollection AddEventBus(this IServiceCollection services, params Assembly[] assemblies)
+        private static IServiceCollection AddEventBus(this IServiceCollection services, params Assembly[] assemblies)
         {
             List<Type> handlers = new List<Type>();
 
@@ -68,7 +66,7 @@ namespace EventBus
             return AddEventBus(services, handlers);
         }
 
-        public static IServiceCollection AddEventBus(this IServiceCollection services, List<Type> types)
+        private static IServiceCollection AddEventBus(this IServiceCollection services, List<Type> types)
         {
             services.AddSingleton<ICallEventHandler, DefaultCallEventHandler>();
 
