@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using EventBus.Abstractions;
 using EventBus.SubsManager;
+using EventBus.Configurations;
 
 namespace EventBus
 {
@@ -17,6 +18,20 @@ namespace EventBus
             var bus = sp.GetRequiredService<IEventBus>();
             bus.Subscribe(SubscriptionsManager.GetTopics().ToArray());
             return app;
+        }
+
+        public static IServiceCollection AddEventBus(this IServiceCollection services, Action<EventBusOptions> setupAction)
+        {
+            //Options and extension service
+            var options = new EventBusOptions();
+            setupAction(options);
+            foreach (var serviceExtension in options.ServiceCollectionExtensions)
+            {
+                serviceExtension.AddServices(services);
+            }
+            services.AddSingleton(options);
+
+            return services;
         }
 
         public static IServiceCollection AddEventBus(this IServiceCollection services)
