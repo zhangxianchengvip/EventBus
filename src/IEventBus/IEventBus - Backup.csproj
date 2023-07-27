@@ -6,15 +6,14 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>EventBus</Title>
     <Authors>zhangxiancheng</Authors>
-    <Description>EventBus</Description>
+    <Description>EventBus抽象</Description>
     <PackageProjectUrl>https://github.com/zhangxianchengvip/EventBus</PackageProjectUrl>
     <RepositoryUrl>https://github.com/zhangxianchengvip/EventBus</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>EventBus</PackageTags>
-    <PackageReleaseNotes>修改注册方式</PackageReleaseNotes>
+    <PackageReleaseNotes>EventBus 抽象接口</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

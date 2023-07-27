@@ -22,7 +22,10 @@ dotnet add package IEventBus.AspNetCore
 2. 注册服务
 
 ```c#
-builder.Services.AddAspNetCoreEventBus();
+builder.Services.AddEventBus
+(
+    options => { options.UseAspNetCore(); }
+);
 ```
 
 3. 配置管道

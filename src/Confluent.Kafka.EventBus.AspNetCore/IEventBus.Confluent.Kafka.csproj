@@ -7,13 +7,14 @@
     <Title>EventBus</Title>
     <Authors>zhangxiancheng</Authors>
     <Description>基于Confluent.Kafka实现EventBus</Description>
-    <PackageReleaseNotes>基于Confluent.Kafka实现EventBus</PackageReleaseNotes>
+    <PackageReleaseNotes>更改注册方式</PackageReleaseNotes>
     <PackageTags>EventBus</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/zhangxianchengvip/EventBus</RepositoryUrl>
     <PackageProjectUrl>https://github.com/zhangxianchengvip/EventBus</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

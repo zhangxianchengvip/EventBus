@@ -1,4 +1,4 @@
-# Confluent.Kafka.EventBus.AspNetCore
+# IEventBus.Confluent.Kafka
 
 #### 介绍
 基于 Confluent.Kafka 实现进程内事件总线
@@ -7,22 +7,25 @@
 
 1. 安装
 
-- [Package Manager](https://www.nuget.org/packages/Confluent.Kafka.EventBus.AspNetCore)
+- [Package Manager](https://www.nuget.org/packages/IEventBus.Confluent.Kafka)
 
 ```
-Install-Package Confluent.Kafka.EventBus.AspNetCore
+Install-Package IEventBus.Confluent.Kafka
 ```
 
-- [.NET CLI](https://www.nuget.org/packages/Confluent.Kafka.EventBus.AspNetCore)
+- [.NET CLI](https://www.nuget.org/packages/IEventBus.Confluent.Kafka)
 
 ```
-dotnet add package Confluent.Kafka.EventBus.AspNetCore
+dotnet add package IEventBus.Confluent.Kafka
 ```
 
 2. 注册服务
 
 ```c#
-builder.Services.AddConfluentKafkaEventBus();
+builder.Services.AddEventBus
+(
+    options => { options.UseKafka(builder.Configuration); }
+);
 ```
 
 3. 配置管道

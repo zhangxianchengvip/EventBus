@@ -85,7 +85,13 @@ dotnet add package IEventBus.AspNetCore
 2. 注册服务
 
 ```c#
+//version 1.0.0
 builder.Services.AddAspNetCoreEventBus();
+//version 2.0.0
+builder.Services.AddEventBus
+(
+    options => { options.UseAspNetCore(); }
+);
 ```
 
 3. 配置管道
@@ -146,7 +152,7 @@ public class EventBusController : ControllerBase
 
 
 
-# Confluent.Kafka.EventBus.AspNetCore
+# Confluent.Kafka.EventBus.AspNetCore(IEventBus.Confluent.Kafka)
 
 #### 介绍
 基于 Confluent.Kafka 实现事件总线
@@ -158,19 +164,32 @@ public class EventBusController : ControllerBase
 - [Package Manager](https://www.nuget.org/packages/Confluent.Kafka.EventBus.AspNetCore)
 
 ```
+//version 1.0.0
 Install-Package Confluent.Kafka.EventBus.AspNetCore
+//version 2.0.0
+Install-Package IEventBus.Confluent.Kafka
+
 ```
 
 - [.NET CLI](https://www.nuget.org/packages/Confluent.Kafka.EventBus.AspNetCore)
 
 ```
+//version 1.0.0
 dotnet add package Confluent.Kafka.EventBus.AspNetCore
+//version 2.0.0
+dotnet add package IEventBus.Confluent.Kafka
 ```
 
 2. 注册服务
 
 ```c#
+//version 1.0.0
 builder.Services.AddConfluentKafkaEventBus();
+//version 2.0.0
+builder.Services.AddEventBus
+(
+    options => { options.UseKafka(builder.Configuration); }
+);
 ```
 
 3. 配置管道
